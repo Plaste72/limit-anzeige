@@ -1,0 +1,5 @@
+{
+  "name": "limit-anzeige",
+  "owner": { "name": "Plaste72" },
+  "plugins": [{ "name": "limit-anzeige", "source": "./" }]
+}
