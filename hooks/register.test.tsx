@@ -41,7 +41,7 @@ test('nach einer Antwort: frische Werte, nicht grau', async ($, on) => {
 
   const ui = await $.ui.mount(BAND('desktop'))
   expect(await ui.find({ type: 'Text', text: /zuletzt/ })).toBeFalsy()
-  expect((await ui.find({ type: 'Text', text: /FAST AUFGEBRAUCHT/ }))?.text).toBeTruthy()
+  expect((await ui.find({ type: 'Text', text: /FAST.AUFGEBRAUCHT/ }))?.text).toBeTruthy()
   await ui.unmount()
   expect(gespeichert).toBeTruthy()
 })

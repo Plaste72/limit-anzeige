@@ -97,7 +97,9 @@ export const register: Register = on => {
 
     // Alte Werte: grau. Ist ein Fenster seitdem schon zurückgesetzt, zählt es als frei.
     const istAlt = st.alt
-    const BREITE = breiteFuer(e.props.bodyColumns)
+    // Steht irgendwo die Warnung, werden die Balken kürzer, damit alles in eine Zeile passt
+    const warnung = !istAlt && liste.some(f => Math.round(f.percentUsed) >= 97)
+    const BREITE = warnung ? Math.max(6, breiteFuer(e.props.bodyColumns) - 12) : breiteFuer(e.props.bodyColumns)
 
     return (
       <Box justifyContent="center">
@@ -118,7 +120,7 @@ export const register: Register = on => {
                 <Text color="subtle">{'░'.repeat(BREITE - voll)}</Text>
                 <Text color={farbe} bold={!istAlt}>{` ${used} %`}</Text>
                 <Text dimColor>{zusatz}</Text>
-                {!istAlt && used >= 97 ? <Text color="error" bold>{' ⚠️ FAST AUFGEBRAUCHT!'}</Text> : null}
+                {!istAlt && used >= 97 ? <Text color="error" bold>{' ⚠️ FAST AUFGEBRAUCHT!'}</Text> : null}
               </Text>
             )
           })}
