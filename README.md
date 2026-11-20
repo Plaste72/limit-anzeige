@@ -15,4 +15,4 @@ In einer Claude-Code-Sitzung im Terminal eingeben:
 ```
 
 Dann `y`, um den Marktplatz hinzuzufügen, und als Bereich „user“ wählen (gilt für alle Projekte).
-Das Repository ist privat: Auf dem Rechner muss GitHub mit einem Konto mit Zugriff eingerichtet sein.
+Das Repository ist öffentlich, ein GitHub-Konto ist zum Installieren nicht nötig.
